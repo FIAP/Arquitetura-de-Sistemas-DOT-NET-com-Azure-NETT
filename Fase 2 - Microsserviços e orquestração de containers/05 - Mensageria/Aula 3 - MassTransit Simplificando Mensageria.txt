@@ -1,0 +1,8 @@
+Aula 3 - MassTransit: Simplificando Mensageria
+Fase 2 - Microsserviços e orquestração de containers
+Capítulo: Mensageria
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=549605&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=549611
+
+Obs.: links exigem login na plataforma FIAP.

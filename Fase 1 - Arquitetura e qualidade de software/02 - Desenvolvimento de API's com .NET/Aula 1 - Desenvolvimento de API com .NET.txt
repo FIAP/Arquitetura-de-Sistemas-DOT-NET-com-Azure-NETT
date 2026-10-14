@@ -1,0 +1,8 @@
+Aula 1 - Desenvolvimento de API com .NET
+Fase 1 - Arquitetura e qualidade de software
+Capítulo: Desenvolvimento de API's com .NET
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=530108&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=530121
+
+Obs.: links exigem login na plataforma FIAP.

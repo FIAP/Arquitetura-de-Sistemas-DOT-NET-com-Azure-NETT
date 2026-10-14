@@ -1,0 +1,8 @@
+Aula 5 - Modelos de Visão, Áudio e Multimodais para .NET
+Fase 5 - Agilidade, segurança e IA
+Capítulo: Inteligência Artificial em .NET
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=626095&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=626104
+
+Obs.: links exigem login na plataforma FIAP.

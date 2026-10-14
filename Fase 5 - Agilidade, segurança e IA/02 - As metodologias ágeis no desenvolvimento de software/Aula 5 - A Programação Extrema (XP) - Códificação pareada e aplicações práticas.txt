@@ -1,0 +1,8 @@
+Aula 5 - A Programação Extrema (XP) - Códificação pareada e aplicações práticas
+Fase 5 - Agilidade, segurança e IA
+Capítulo: As metodologias ágeis no desenvolvimento de software
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=626046&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=626053
+
+Obs.: links exigem login na plataforma FIAP.

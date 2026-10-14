@@ -1,0 +1,8 @@
+Aula 8 - Dimensionamento automático com HPA
+Fase 2 - Microsserviços e orquestração de containers
+Capítulo: Kubernetes
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=549569&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=549577
+
+Obs.: links exigem login na plataforma FIAP.

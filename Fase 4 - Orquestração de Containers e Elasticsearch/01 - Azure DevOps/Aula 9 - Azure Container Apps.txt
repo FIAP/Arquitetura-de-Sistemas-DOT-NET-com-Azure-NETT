@@ -1,0 +1,8 @@
+Aula 9 - Azure Container Apps
+Fase 4 - Orquestração de Containers e Elasticsearch
+Capítulo: Azure DevOps
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=615298&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=615307
+
+Obs.: links exigem login na plataforma FIAP.

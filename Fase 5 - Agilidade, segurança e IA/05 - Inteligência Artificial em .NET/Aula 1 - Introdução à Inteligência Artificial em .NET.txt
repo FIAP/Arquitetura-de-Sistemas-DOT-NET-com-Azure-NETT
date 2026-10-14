@@ -1,0 +1,8 @@
+Aula 1 - Introdução à Inteligência Artificial em .NET
+Fase 5 - Agilidade, segurança e IA
+Capítulo: Inteligência Artificial em .NET
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=626091&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=626100
+
+Obs.: links exigem login na plataforma FIAP.

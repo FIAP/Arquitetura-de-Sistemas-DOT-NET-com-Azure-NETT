@@ -1,0 +1,8 @@
+Aula 2 - Testes de Unidade
+Fase 1 - Arquitetura e qualidade de software
+Capítulo: Princípios básicos de qualidade de Software
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=530147&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=530151
+
+Obs.: links exigem login na plataforma FIAP.

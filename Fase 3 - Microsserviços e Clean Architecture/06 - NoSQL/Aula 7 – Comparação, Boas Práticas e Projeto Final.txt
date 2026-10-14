@@ -1,0 +1,8 @@
+Aula 7 – Comparação, Boas Práticas e Projeto Final
+Fase 3 - Microsserviços e Clean Architecture
+Capítulo: NoSQL
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=584903&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=584910
+
+Obs.: links exigem login na plataforma FIAP.

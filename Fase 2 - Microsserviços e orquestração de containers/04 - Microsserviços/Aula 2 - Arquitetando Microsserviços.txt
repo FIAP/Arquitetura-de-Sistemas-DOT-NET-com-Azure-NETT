@@ -1,0 +1,8 @@
+Aula 2 - Arquitetando Microsserviços
+Fase 2 - Microsserviços e orquestração de containers
+Capítulo: Microsserviços
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=549589&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=549596
+
+Obs.: links exigem login na plataforma FIAP.

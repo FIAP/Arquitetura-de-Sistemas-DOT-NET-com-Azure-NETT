@@ -1,0 +1,8 @@
+Aula 5 – Blazor na Prática: Aplicações profissionais
+Fase 5 - Agilidade, segurança e IA
+Capítulo: Blazor e Razor
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=626076&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=626081
+
+Obs.: links exigem login na plataforma FIAP.

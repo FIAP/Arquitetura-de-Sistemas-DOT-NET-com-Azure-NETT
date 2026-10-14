@@ -1,0 +1,8 @@
+Aula 6 - Gerenciamento de Kubernetes com EKS
+Fase 4 - Orquestração de Containers e Elasticsearch
+Capítulo: AWS
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=615314&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=615324
+
+Obs.: links exigem login na plataforma FIAP.

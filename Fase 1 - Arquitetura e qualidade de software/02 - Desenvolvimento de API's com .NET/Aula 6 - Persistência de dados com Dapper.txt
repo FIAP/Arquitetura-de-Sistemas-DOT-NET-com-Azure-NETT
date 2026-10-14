@@ -1,0 +1,8 @@
+Aula 6 - Persistência de dados com Dapper
+Fase 1 - Arquitetura e qualidade de software
+Capítulo: Desenvolvimento de API's com .NET
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=530113&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=530126
+
+Obs.: links exigem login na plataforma FIAP.

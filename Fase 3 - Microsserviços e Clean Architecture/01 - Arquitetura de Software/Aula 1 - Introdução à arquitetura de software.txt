@@ -1,0 +1,8 @@
+Aula 1 - Introdução à arquitetura de software
+Fase 3 - Microsserviços e Clean Architecture
+Capítulo: Arquitetura de Software
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=582526&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=582531
+
+Obs.: links exigem login na plataforma FIAP.

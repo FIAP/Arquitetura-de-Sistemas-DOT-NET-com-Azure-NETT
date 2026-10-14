@@ -1,0 +1,8 @@
+Aula 7 - Azure Container Instance (ACI)
+Fase 4 - Orquestração de Containers e Elasticsearch
+Capítulo: Azure DevOps
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=615296&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=615305
+
+Obs.: links exigem login na plataforma FIAP.

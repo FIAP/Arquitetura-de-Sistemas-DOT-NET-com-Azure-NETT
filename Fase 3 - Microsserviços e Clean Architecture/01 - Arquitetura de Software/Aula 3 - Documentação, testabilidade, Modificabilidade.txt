@@ -1,0 +1,8 @@
+Aula 3 - Documentação, testabilidade, Modificabilidade
+Fase 3 - Microsserviços e Clean Architecture
+Capítulo: Arquitetura de Software
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=582528&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=582533
+
+Obs.: links exigem login na plataforma FIAP.

@@ -1,0 +1,8 @@
+Aula 4 – Redis Fundamentos e Persistência/HA
+Fase 4 - Orquestração de Containers e Elasticsearch
+Capítulo: NoSQL
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=615333&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=615340
+
+Obs.: links exigem login na plataforma FIAP.

@@ -1,0 +1,8 @@
+Aula 4- Indexação de Documentos
+Fase 4 - Orquestração de Containers e Elasticsearch
+Capítulo: Elasticsearch
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=615359&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=615364
+
+Obs.: links exigem login na plataforma FIAP.

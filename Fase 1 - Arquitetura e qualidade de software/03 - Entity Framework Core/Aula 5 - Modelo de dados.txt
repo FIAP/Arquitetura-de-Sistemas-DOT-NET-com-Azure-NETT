@@ -1,0 +1,8 @@
+Aula 5 - Modelo de dados
+Fase 1 - Arquitetura e qualidade de software
+Capítulo: Entity Framework Core
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=530139&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=530144
+
+Obs.: links exigem login na plataforma FIAP.

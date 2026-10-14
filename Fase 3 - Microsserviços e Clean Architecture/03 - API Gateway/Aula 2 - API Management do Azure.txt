@@ -1,0 +1,8 @@
+Aula 2 - API Management do Azure
+Fase 3 - Microsserviços e Clean Architecture
+Capítulo: API Gateway
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=582579&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=582585
+
+Obs.: links exigem login na plataforma FIAP.

@@ -1,0 +1,8 @@
+Aula 2 – Ambiente e Primeira Aplicação
+Fase 5 - Agilidade, segurança e IA
+Capítulo: Blazor e Razor
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=626073&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=626078
+
+Obs.: links exigem login na plataforma FIAP.

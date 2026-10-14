@@ -1,0 +1,8 @@
+Aula 1 - O que é APM e seus beneficios
+Fase 3 - Microsserviços e Clean Architecture
+Capítulo: Monitoramento e Acesso Avançado
+
+Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=582600&sesskey=XPGXRqAzGE
+E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=582608
+
+Obs.: links exigem login na plataforma FIAP.

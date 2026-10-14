@@ -85,8 +85,8 @@ Este repositório contém os materiais complementares divididos por fases, categ
   - Aula 7 - Segurança dos Microsserviços
 - [Mensageria](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/05%20-%20Mensageria)
   - Aula 1 - fundamentos-event-driven-architecture
-  - Aula 2 - Introdução ao RabbitMQ com .NET
-  - Aula 3 - MassTransit: Simplificando Mensageria
+  - [Aula 2 - Introdução ao RabbitMQ com .NET](./Fase%202%20-%20Microsserviços%20e%20orquestração%20de%20containers/05%20-%20Mensageria/Aula%202%20-%20Introdução%20ao%20RabbitMQ%20com%20.NET/)
+  - [Aula 3 - MassTransit: Simplificando Mensageria](./Fase%202%20-%20Microsserviços%20e%20orquestração%20de%20containers/05%20-%20Mensageria/Aula%203%20-%20MassTransit%20Simplificando%20Mensageria/)
   - Aula 4 - Padrões de Mensageria e Event Sourcing
   - Aula 5 - Apache Kafka: Streaming de Dados
   - Aula 6 - Kafka CDC com SQL Server na Prática

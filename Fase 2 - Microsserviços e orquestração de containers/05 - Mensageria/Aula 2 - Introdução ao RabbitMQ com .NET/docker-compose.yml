@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      # Porta para conexão AMQP
+      - "5672:5672"
+      # Porta para interface de gerenciamento
+      - "15672:15672"
+    environment:
+      # Usuário e senha padrão
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin123
+      # Configurações adicionais
+      RABBITMQ_DEFAULT_VHOST: /
+    volumes:
+      # Volume para persistir dados
+      - rabbitmq_data:/var/lib/rabbitmq
+      # Volume para logs
+      - rabbitmq_logs:/var/log/rabbitmq
+    networks:
+      - rabbitmq_net
+    restart: unless-stopped
+
+volumes:
+  rabbitmq_data:
+    driver: local
+  rabbitmq_logs:
+    driver: local
+
+networks:
+  rabbitmq_net:
+    driver: bridge

@@ -1,0 +1,100 @@
+@model MessageProducer.Models.MessageModel
+
+@{
+    ViewData["Title"] = "Enviar Mensagem para RabbitMQ";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        Enviar Mensagem para RabbitMQ
+                    </h4>
+                </div>
+                <div class="card-body">
+                    @if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            @TempData["Success"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Por favor, corrija os erros abaixo.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+
+                    <form asp-controller="Message" asp-action="SendMessage" method="post">
+                        <div class="mb-3">
+                            <label asp-for="Message" class="form-label fw-bold">Mensagem:</label>
+                            <textarea asp-for="Message" class="form-control" rows="4" 
+                                placeholder="Digite sua mensagem aqui..." maxlength="500"></textarea>
+                            <div class="form-text">Máximo 500 caracteres</div>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                A mensagem será enviada para a fila 'mensagens' no RabbitMQ
+                            </small>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0">
+                        Informações do RabbitMQ
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                        <li><strong>Fila:</strong> mensagens</li>
+                        <li><strong>Servidor:</strong> localhost:5672</li>
+                        <li><strong>Management UI:</strong> <a href="http://localhost:15672" target="_blank">http://localhost:15672</a></li>
+                        <li><strong>Usuário:</strong> admin / admin123</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Contador de caracteres
+        document.addEventListener('DOMContentLoaded', function() {
+            const textarea = document.querySelector('textarea[name="Message"]');
+            const maxLength = 500;
+            
+            if (textarea) {
+                const counter = document.createElement('div');
+                counter.className = 'form-text text-end';
+                counter.style.marginTop = '-15px';
+                textarea.parentNode.appendChild(counter);
+                
+                function updateCounter() {
+                    const remaining = maxLength - textarea.value.length;
+                    counter.textContent = `${textarea.value.length}/${maxLength} caracteres`;
+                    counter.className = remaining < 50 ? 'form-text text-end text-warning' : 'form-text text-end text-muted';
+                }
+                
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+    </script>
+}

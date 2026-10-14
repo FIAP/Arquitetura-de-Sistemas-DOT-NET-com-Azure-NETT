@@ -1,6 +1,6 @@
-# [Nome do curso] - [CURSO]
+# Arquitetura de Sistemas. NET com Azure - NETT
 
-Este repositório contém o materiais complementares divididos por fases, categorias e aulas.
+Este repositório contém os materiais complementares divididos por fases, categorias e aulas.
 
 ---
 

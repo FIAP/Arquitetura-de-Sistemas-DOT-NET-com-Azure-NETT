@@ -7,213 +7,44 @@ Este repositório contém os materiais complementares divididos por fases, categ
 
 ---
 
-## Árvore de Conteúdo
+<!-- INDEX:START -->
 
-### [Fase 1: Arquitetura e qualidade de software](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software)
-- [Análise de projetos com DDD](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/01%20-%20An%C3%A1lise%20de%20projetos%20com%20DDD)
-  - Aula 1 - Introdução à Domain Driven Design
-  - Aula 2 - Domain Storytelling
-  - Aula 3 - Descoberta e formação do conhecimento
-  - Aula 4 - Trabalhando com contextos delimitados
-  - Aula 5 - Implementando arquitetura e lógica
-  - Aula 6 - Event Storming
-  - Aula 7 - Levantamento de requisitos
-  - Aula 8 - Refinamento técnico
-  - Aula 9 - Definition of Ready e Definition of Done
-- [Desenvolvimento de API's com .NET](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/02%20-%20Desenvolvimento%20de%20API%27s%20com%20.NET)
-  - Aula 1 - Desenvolvimento de API com .NET
-  - Aula 2 - Middlewares e Injeção de dependência
-  - Aula 3 - Trabalhando com Logs
-  - Aula 4 - Serialização de dados
-  - Aula 5 - Autenticação e Autorização
-  - Aula 6 - Persistência de dados com Dapper
-  - Aula 7 - Documentando API
-  - Aula 8 - Trabalhando com Cache
-  - Aula 9 - Explorando Minimal API
-  - Aula 10 - Middlewares e Injeção de dependência com Minimal API
-  - Aula 11 - Criando API com GraphQL
-  - Aula 12 - Criando API gRPC
-  - Aula 13 - Resiliência em APIs
-- [Entity Framework Core](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/03%20-%20Entity%20Framework%20Core)
-  - Aula 1 - Conceitos básicos
-  - Aula 2 - Setup do Ambiente
-  - Aula 3 - EF Database
-  - Aula 4 - Tipos de carregamento
-  - Aula 5 - Modelo de dados
-- [Princípios básicos de qualidade de Software](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/04%20-%20Princ%C3%ADpios%20b%C3%A1sicos%20de%20qualidade%20de%20Software)
-  - Aula 1 - Apresentação Pirâmide de Testes
-  - Aula 2 - Testes de Unidade
-  - Aula 3 - Testes de Integração
-  - Aula 4 - Testes de Interface do Usuário
-- [Qualidade de Software](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/05%20-%20Qualidade%20de%20Software)
-  - Aula 1 - Principais conceitos
-  - Aula 2 - Testes de unidade
-  - Aula 3 - Aplicando TDD na prática
-  - Aula 4 - Testes de integração
-  - Aula 5 - Trabalhando com BDD
-  - Aula 6 - Testes de carga
+## [Fase 1 - Arquitetura e qualidade de software](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software)
+- [01 - Análise de projetos com DDD](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/01%20-%20An%C3%A1lise%20de%20projetos%20com%20DDD)
+- [02 - Desenvolvimento de API's com .NET](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/02%20-%20Desenvolvimento%20de%20API%27s%20com%20.NET)
+- [03 - Entity Framework Core](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/03%20-%20Entity%20Framework%20Core)
+- [04 - Princípios básicos de qualidade de Software](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/04%20-%20Princ%C3%ADpios%20b%C3%A1sicos%20de%20qualidade%20de%20Software)
+- [05 - Qualidade de Software](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/05%20-%20Qualidade%20de%20Software)
 
-### [Fase 2: Microsserviços e orquestração de containers](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers)
-- [Docker](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/01%20-%20Docker)
-  - Aula 1 - Introdução ao Docker
-  - Aula 2 - Gerenciamento de Contêineres
-  - Aula 3 - Orquestração de Contêineres
-  - Aula 4 - Melhores Práticas e Solução de Problemas
-  - Aula 5 - Segurança de Contêineres
-  - Aula 6 - ECS
-- [Kubernetes](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/02%20-%20Kubernetes)
-  - Aula 1 - O que são Kubernetes
-  - Aula 2 - Criando e rodando Kubernetes
-  - Aula 3 - Pods, Rótulos e anotações
-  - Aula 4 - Services e ConfigMap
-  - Aula 5 - Escalabilidade com ReplicaSets e Deployment
-  - Aula 6 - Armazenamento de dados com Volumes
-  - Aula 7 - Disponibilidade e a confiabilidade com Probes
-  - Aula 8 - Dimensionamento automático com HPA
-- [Orquestração de containers com Kubernetes](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/03%20-%20Orquestra%C3%A7%C3%A3o%20de%20containers%20com%20Kubernetes)
-  - Aula 1 - Introdução ao Kubernetes
-  - Aula 2 - Implantação do Azure AKS
-  - Aula 3 - Trabalhando com AKS parte prática
-  - Aula 4 - CI/CD com AKS
-- [Microsserviços](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/04%20-%20Microsservi%C3%A7os)
-  - Aula 1 - Introdução a Microsserviços
-  - Aula 2 - Arquitetando Microsserviços
-  - Aula 3 - Banco de Dados em Microsserviços
-  - Aula 4 - Padrões de Comunicação entre Microsserviços
-  - Aula 5 - Resiliência e alta disponibilidade
-  - Aula 6 - Observabilidade e Monitoramento
-  - Aula 7 - Segurança dos Microsserviços
-- [Mensageria](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/05%20-%20Mensageria)
-  - Aula 1 - fundamentos-event-driven-architecture
-  - [Aula 2 - Introdução ao RabbitMQ com .NET](./Fase%202%20-%20Microsserviços%20e%20orquestração%20de%20containers/05%20-%20Mensageria/Aula%202%20-%20Introdução%20ao%20RabbitMQ%20com%20.NET/)
-  - [Aula 3 - MassTransit: Simplificando Mensageria](./Fase%202%20-%20Microsserviços%20e%20orquestração%20de%20containers/05%20-%20Mensageria/Aula%203%20-%20MassTransit%20Simplificando%20Mensageria/)
-  - Aula 4 - Padrões de Mensageria e Event Sourcing
-  - Aula 5 - Apache Kafka: Streaming de Dados
-  - Aula 6 - Kafka CDC com SQL Server na Prática
+## [Fase 2 - Microsserviços e orquestração de containers](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers)
+- [01 - Docker](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/01%20-%20Docker)
+- [02 - Kubernetes](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/02%20-%20Kubernetes)
+- [03 - Orquestração de containers com Kubernetes](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/03%20-%20Orquestra%C3%A7%C3%A3o%20de%20containers%20com%20Kubernetes)
+- [04 - Microsserviços](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/04%20-%20Microsservi%C3%A7os)
+- [05 - Mensageria](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/05%20-%20Mensageria)
+  - [Aula 2 - Introdução ao RabbitMQ com .NET](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/05%20-%20Mensageria/Aula%202%20-%20Introdu%C3%A7%C3%A3o%20ao%20RabbitMQ%20com%20.NET)
+  - [Aula 3 - MassTransit Simplificando Mensageria](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/05%20-%20Mensageria/Aula%203%20-%20MassTransit%20Simplificando%20Mensageria)
 
-### [Fase 3: Microsserviços e Clean Architecture](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture)
-- [Arquitetura de Software](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/01%20-%20Arquitetura%20de%20Software)
-  - Aula 1 - Introdução à arquitetura de software
-  - Aula 2 - Processo e modularização
-  - Aula 3 - Documentação, testabilidade, Modificabilidade
-  - Aula 4 - Escalabilidade, Disponibilidade e desempenho
-  - Aula 5 - Arquitetura Hexagonal
-- [Serverless Apps](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/02%20-%20Serverless%20Apps)
-  - Aula 1 - Fundamentos de Serverless
-  - Aula 2 - Desenvolvimento de Funções Serverless
-  - Aula 3 - Desenvolvimento de Funções Serverless AWS
-  - Aula 4 - Desenvolvimento de Funções Serverless Azure
-  - Aula 5 - Monitoramento e Segurança
-  - Aula 6 - AWS Step Functions com .NET
-- [API Gateway](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/03%20-%20API%20Gateway)
-  - Aula 1 - Introdução ao API Gateway
-  - Aula 2 - API Management do Azure
-  - Aula 3 - API Management na prática
-  - Aula 4 - Conhecendo o Kong
-  - Aula 5 - Criando Serviços e Rotas
-  - Aula 6 - Consumers
-- [Monitoramento e Acesso](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/04%20-%20Monitoramento%20e%20Acesso)
-  - Aula 1 - Introdução sobre Monitoramento
-  - Aula 2 - Zabbix - Monitoramento de infraestrutura
-  - Aula 3 - Prometheus - Monitoramento de métricas em tempo real
-- [Monitoramento e Acesso Avançado](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/05%20-%20Monitoramento%20e%20Acesso%20Avan%C3%A7ado)
-  - Aula 1 - O que é APM e seus beneficios
-  - Aula 2 - Introdução APM Datadog
-  - Aula 3 - Logs com Datadog
-  - Aula 4 - Infra com Datadog
-  - Aula 5 - Introdução APM Newrelic
-  - Aula 6 - Logs com Newrelic
-  - Aula 7 - Infra com Newrelic
-  - Aula 8 - Configurando alertas
-- [NoSQL](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/06%20-%20NoSQL)
-  - Aula 1 – Introdução ao NoSQL
-  - Aula 2 – MongoDB Básico
-  - Aula 3 – MongoDB Avançado
-  - Aula 4 – Redis Fundamentos e Persistência/HA
-  - Aula 5 – DynamoDB Fundamentos e Modelagem
-  - Aula 6 – DynamoDB Avançado
-  - Aula 7 – Comparação, Boas Práticas e Projeto Final
+## [Fase 3 - Microsserviços e Clean Architecture](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture)
+- [01 - Arquitetura de Software](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/01%20-%20Arquitetura%20de%20Software)
+- [02 - Serverless Apps](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/02%20-%20Serverless%20Apps)
+- [03 - API Gateway](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/03%20-%20API%20Gateway)
+- [04 - Monitoramento e Acesso](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/04%20-%20Monitoramento%20e%20Acesso)
+- [05 - Monitoramento e Acesso Avançado](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/05%20-%20Monitoramento%20e%20Acesso%20Avan%C3%A7ado)
+- [06 - NoSQL](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/06%20-%20NoSQL)
 
-### [Fase 4: Orquestração de Containers e Elasticsearch](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch)
-- [Azure DevOps](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/01%20-%20Azure%20DevOps)
-  - Aula 1 - Conhecendo o Azure DevOps
-  - Aula 2 - Azure Dashboards e Azure Wiki
-  - Aula 3 - Azure Pipelines e Release CI/CD
-  - Aula 4 - Multi stage pipeline
-  - Aula 5 - Conceitos básicos de Docker
-  - Aula 6 - Azure Container Registry (ACR)
-  - Aula 7 - Azure Container Instance (ACI)
-  - Aula 8 - WEB APP
-  - Aula 9 - Azure Container Apps
-- [AWS](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/02%20-%20AWS)
-  - Aula 1 - Introdução ao IAM (Identity and Access Management)
-  - Aula 2 - Explorando a VPC
-  - Aula 3 - Explorando a EC2
-  - Aula 4 - Explorando o ECR
-  - Aula 5 - Utilizando o ECS
-  - Aula 6 - Gerenciamento de Kubernetes com EKS
-  - Aula 7 - Monitoramento com Cloudwatch
-  - Aula 8 - Desenvolvendo com Lambda Functions
-  - Aula 9 - Explorando o RDS
-  - Aula 10 - Criando uma aplicação com a AWS (Sonarqube)
-- [NoSQL](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/03%20-%20NoSQL)
-  - Aula 1 – Introdução ao NoSQL
-  - Aula 2 – MongoDB Básico
-  - Aula 3 – MongoDB Avançado
-  - Aula 4 – Redis Fundamentos e Persistência/HA
-  - Aula 5 – DynamoDB Fundamentos e Modelagem
-  - Aula 6 – DynamoDB Avançado
-  - Aula 7 – Comparação, Boas Práticas e Projeto Final
-- [Github Actions](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/04%20-%20Github%20Actions)
-  - Aula 1 - Introdução
-  - Aula 2 - Fundamentos básicos
-  - Aula 3 - GitHub Actions em Ambientes On-Premises
-  - Aula 4 - Conceitos básicos de Docker
-  - Aula 5 - Repositório de imagens
-- [Elasticsearch](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/05%20-%20Elasticsearch)
-  - Aula 1- Introdução ao Elastic Search e Busca de Texto
-  - Aula 2- Configuração e Instalação
-  - Aula 3- Elastic Search API e .NET
-  - Aula 4- Indexação de Documentos
-  - Aula 5- Pesquisa e Consultas Avançadas
+## [Fase 4 - Orquestração de Containers e Elasticsearch](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch)
+- [01 - Azure DevOps](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/01%20-%20Azure%20DevOps)
+- [02 - AWS](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/02%20-%20AWS)
+- [03 - NoSQL](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/03%20-%20NoSQL)
+- [04 - Github Actions](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/04%20-%20Github%20Actions)
+- [05 - Elasticsearch](./Fase%204%20-%20Orquestra%C3%A7%C3%A3o%20de%20Containers%20e%20Elasticsearch/05%20-%20Elasticsearch)
 
-### [Fase 5: Agilidade, segurança e IA](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA)
-- [SOLID](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/01%20-%20SOLID)
-  - Aula 1 - Introdução aos Princípios SOLID
-  - Aula 2 - Single Responsibility Principle
-  - Aula 3 - Open/Closed Principle
-  - Aula 4 - Liskov Substitution Principle
-  - Aula 5 - Interface Segregation Principle
-  - Aula 6 - Dependency Inversion Principle
-- [As metodologias ágeis no desenvolvimento de software](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/02%20-%20As%20metodologias%20%C3%A1geis%20no%20desenvolvimento%20de%20software)
-  - Aula 1 - Principais conceitos sobre metodologia ágil
-  - Aula 2 - Scrum - Principios
-  - Aula 3 - Scrum - Ferramentas e aplicações práticas
-  - Aula 4 - A Programação Extrema (XP)
-  - Aula 5 - A Programação Extrema (XP) - Códificação pareada e aplicações práticas
-  - Aula 6 - Mentalidade Lean
-  - Aula 7 - Mentalidade Lean - Kanban e ciclos de feedback
-- [Privacidade de Dados e LGPD](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/03%20-%20Privacidade%20de%20Dados%20e%20LGPD)
-  - Aula 1 - Introdução à LGPD e Seus Princípios Básicos
-  - Aula 2 - A Segurança dos Usuários e de Seus Dados
-  - Aula 3 - Governança de Dados
-  - Aula 4 - Inteligência Artificial na LGPD
-  - Aula 5 - LGPD na Implementação da Solução de Tecnologia
-  - Aula 6 - LGPD no Desenvolvimento de Software
-  - Aula 7 - Consideraçoes Finais na LGPD
-- [Blazor e Razor](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/04%20-%20Blazor%20e%20Razor)
-  - Aula 1 – Introdução ao Blazor
-  - Aula 2 – Ambiente e Primeira Aplicação
-  - Aula 3 – Arquitetura dos Componentes
-  - Aula 4 – Roteamento e Formulários
-  - Aula 5 – Blazor na Prática: Aplicações profissionais
-- [Inteligência Artificial em .NET](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/05%20-%20Intelig%C3%AAncia%20Artificial%20em%20.NET)
-  - Aula 1 - Introdução à Inteligência Artificial em .NET
-  - Aula 2 - Modelos de IA e Large Language Models
-  - Aula 3 - Explorando o Ecossistema de IA no .NET
-  - Aula 4 - Aplicando LLMs em .NET com APIs e SDKs
-  - Aula 5 - Modelos de Visão, Áudio e Multimodais para .NET
-  - Aula 6 - Ferramentas, Plugins e Workflows com Semantic Kernel
-  - Aula 7 - IA Local
-  - Aula 8 - Ferramentas de Produtividade com IA no Desenvolvimento
-  - Aula 9 - MCP em .NET
+## [Fase 5 - Agilidade, segurança e IA](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA)
+- [01 - SOLID](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/01%20-%20SOLID)
+- [02 - As metodologias ágeis no desenvolvimento de software](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/02%20-%20As%20metodologias%20%C3%A1geis%20no%20desenvolvimento%20de%20software)
+- [03 - Privacidade de Dados e LGPD](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/03%20-%20Privacidade%20de%20Dados%20e%20LGPD)
+- [04 - Blazor e Razor](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/04%20-%20Blazor%20e%20Razor)
+- [05 - Inteligência Artificial em .NET](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/05%20-%20Intelig%C3%AAncia%20Artificial%20em%20.NET)
+
+<!-- INDEX:END -->

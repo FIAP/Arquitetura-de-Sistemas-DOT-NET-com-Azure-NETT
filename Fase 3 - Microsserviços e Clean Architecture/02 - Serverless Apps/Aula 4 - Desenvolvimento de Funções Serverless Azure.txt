@@ -1,8 +1,0 @@
-Aula 4 - Desenvolvimento de Funções Serverless Azure
-Fase 3 - Microsserviços e Clean Architecture
-Capítulo: Serverless Apps
-
-Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=582554&sesskey=XPGXRqAzGE
-E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=582565
-
-Obs.: links exigem login na plataforma FIAP.

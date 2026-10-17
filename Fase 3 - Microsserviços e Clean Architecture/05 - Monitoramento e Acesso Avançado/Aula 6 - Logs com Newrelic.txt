@@ -1,8 +1,0 @@
-Aula 6 - Logs com Newrelic
-Fase 3 - Microsserviços e Clean Architecture
-Capítulo: Monitoramento e Acesso Avançado
-
-Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=582605&sesskey=XPGXRqAzGE
-E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=582613
-
-Obs.: links exigem login na plataforma FIAP.

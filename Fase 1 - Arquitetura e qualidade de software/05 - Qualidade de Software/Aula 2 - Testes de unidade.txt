@@ -1,8 +1,0 @@
-Aula 2 - Testes de unidade
-Fase 1 - Arquitetura e qualidade de software
-Capítulo: Qualidade de Software
-
-Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=530156&sesskey=XPGXRqAzGE
-E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=530162
-
-Obs.: links exigem login na plataforma FIAP.

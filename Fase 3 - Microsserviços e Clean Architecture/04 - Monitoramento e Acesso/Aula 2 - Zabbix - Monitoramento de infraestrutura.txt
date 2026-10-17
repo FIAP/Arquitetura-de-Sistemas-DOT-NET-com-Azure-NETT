@@ -1,8 +1,0 @@
-Aula 2 - Zabbix - Monitoramento de infraestrutura
-Fase 3 - Microsserviços e Clean Architecture
-Capítulo: Monitoramento e Acesso
-
-Conteúdo (HTML): https://on.fiap.com.br/mod/conteudoshtml/view.php?id=582592&sesskey=XPGXRqAzGE
-E-Book (PDF): https://on.fiap.com.br/mod/conteudospdf/view.php?id=582596
-
-Obs.: links exigem login na plataforma FIAP.

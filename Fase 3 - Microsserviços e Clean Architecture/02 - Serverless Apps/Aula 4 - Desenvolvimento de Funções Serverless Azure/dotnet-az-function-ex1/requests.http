@@ -1,0 +1,95 @@
+# Azure Function - Exemplos de Requisições HTTP
+# Use este arquivo no VS Code com a extensão REST Client
+# Ou copie e cole os comandos curl no terminal
+
+# ===============================================
+# TESTES LOCAIS (Local Development)
+# ===============================================
+@baseUrl = http://localhost:7071
+@azureUrl = https://fiap-teste-h7ejgsgjd2b3b3fq.brazilsouth-01.azurewebsites.net
+
+### 1. Requisição GET simples (LOCAL)
+GET {{baseUrl}}/api/HttpTriggerExample
+
+###
+
+### 2. Requisição GET com parâmetro name (LOCAL)
+GET {{baseUrl}}/api/HttpTriggerExample?name=ThiagoAdriano
+
+###
+
+### 3. Requisição GET simples (AZURE)
+GET {{azureUrl}}/api/HttpTriggerExample
+
+###
+
+### 4. Requisição GET com parâmetro name (AZURE)
+GET {{azureUrl}}/api/HttpTriggerExample?name=ThiagoAdriano
+
+###
+
+### 5. Requisição POST com JSON básico (LOCAL)
+POST {{baseUrl}}/api/HttpTriggerExample
+Content-Type: application/json
+
+{
+  "name": "Thiago Adriano",
+  "curso": "FIAP - Serverless",
+  "aula": 4
+}
+
+###
+
+### 6. Requisição POST com JSON básico (AZURE)
+POST {{azureUrl}}/api/HttpTriggerExample
+Content-Type: application/json
+
+{
+  "name": "Thiago Adriano",
+  "curso": "FIAP - Serverless",
+  "aula": 4
+}
+
+###
+
+### 7. Requisição POST com dados mais complexos (AZURE)
+POST {{azureUrl}}/api/HttpTriggerExample
+Content-Type: application/json
+
+{
+  "name": "Juliana Santos",
+  "idade": 39,
+  "profissao": "Desenvolvedora",
+  "tecnologias": [".NET", "Azure", "Serverless"],
+  "projeto": {
+    "nome": "Azure Functions Example",
+    "versao": "1.0.0",
+    "framework": ".NET 8"
+  },
+  "ativo": true,
+  "ambiente": "Azure Cloud"
+}
+
+###
+
+# ===============================================
+# TESTES DE ERRO E VALIDAÇÃO
+# ===============================================
+
+### 8. Requisição POST sem dados (corpo vazio)
+POST {{baseUrl}}/api/HttpTriggerExample
+Content-Type: application/json
+
+{}
+
+###
+
+### 7. Requisição POST com JSON inválido (para testar tratamento de erro)
+POST http://localhost:7071/api/HttpTriggerExample
+Content-Type: application/json
+
+{
+  "name": "Teste JSON Inválido"
+  // comentário inválido em JSON
+  "erro": 
+

@@ -1,0 +1,109 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Função Lambda .NET para processar uploads do S3
+
+Parameters:
+  BucketName:
+    Type: String
+    Default: "meu-bucket-upload"
+    Description: Nome do bucket S3 que irá gerar os eventos
+  
+  Environment:
+    Type: String
+    Default: "dev"
+    Description: Ambiente de deployment (dev, staging, prod)
+
+Globals:
+  Function:
+    Timeout: 300
+    Runtime: dotnet8
+    MemorySize: 512
+    Environment:
+      Variables:
+        LOCALSTACK_ENDPOINT: "http://localhost:4566"
+        AWS_ACCESS_KEY_ID: "test"
+        AWS_SECRET_ACCESS_KEY: "test"
+
+Resources:
+  # Bucket S3 para upload
+  UploadBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      NotificationConfiguration:
+        LambdaConfigurations:
+          - Event: s3:ObjectCreated:*
+            Function: !GetAtt S3ProcessorFunction.Arn
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: "uploads/"
+
+  # Função Lambda
+  S3ProcessorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${Environment}-s3-processor"
+      CodeUri: ./
+      Handler: S3ProcessorLambda::S3ProcessorLambda.Function::FunctionHandler
+      Events:
+        S3Event:
+          Type: S3
+          Properties:
+            Bucket: !Ref UploadBucket
+            Events: s3:ObjectCreated:*
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: "uploads/"
+      Policies:
+        - S3FullAccessPolicy:
+            BucketName: !Ref BucketName
+        - Statement:
+            - Sid: S3ListBucketsPolicy
+              Effect: Allow
+              Action:
+                - s3:ListBuckets
+              Resource: "*"
+            - Sid: S3BucketPolicy
+              Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:PutObject
+                - s3:DeleteObject
+                - s3:GetObjectMetadata
+                - s3:ListBucket
+              Resource: 
+                - !Sub "${UploadBucket}/*"
+                - !Sub "${UploadBucket}"
+
+  # Permissão para o S3 invocar a Lambda
+  S3InvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref S3ProcessorFunction
+      Principal: s3.amazonaws.com
+      SourceArn: !Sub "${UploadBucket}/*"
+
+Outputs:
+  S3ProcessorFunction:
+    Description: "ARN da função Lambda S3 Processor"
+    Value: !GetAtt S3ProcessorFunction.Arn
+    Export:
+      Name: !Sub "${Environment}-S3ProcessorFunctionArn"
+  
+  UploadBucket:
+    Description: "Nome do bucket para upload"
+    Value: !Ref UploadBucket
+    Export:
+      Name: !Sub "${Environment}-UploadBucketName"
+      
+  BucketArn:
+    Description: "ARN do bucket S3"
+    Value: !GetAtt UploadBucket.Arn
+    Export:
+      Name: !Sub "${Environment}-UploadBucketArn"

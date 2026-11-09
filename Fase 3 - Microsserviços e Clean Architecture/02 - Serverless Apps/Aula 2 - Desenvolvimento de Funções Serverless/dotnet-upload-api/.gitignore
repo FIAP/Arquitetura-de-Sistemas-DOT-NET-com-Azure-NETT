@@ -1,0 +1,64 @@
+# OS / gerais
+.DS_Store
+Thumbs.db
+
+# Build / artefatos .NET
+[Bb]in/
+[Oo]bj/
+out/
+artifacts/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Testes / cobertura
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.codecoverage
+
+# Pacotes / NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+*.nuget.props
+*.nuget.targets
+
+# Logs
+logs/
+*.log
+
+# IDEs
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# VS Code (opcional: comente se quiser versionar a pasta)
+.vscode/
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# Frontend (se houver)
+node_modules/
+dist/
+wwwroot/node_modules/
+wwwroot/dist/
+
+# Configurações locais / segredos
+appsettings.*.local.json
+dotnet-user-secrets.json
+
+# Docker (override local)
+docker-compose.override.yml
+
+

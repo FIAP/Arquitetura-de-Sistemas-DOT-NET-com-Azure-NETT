@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sonarqube-cm
+  namespace: sonarqube
+data:
+  rds-string: "jdbc:postgresql://rds-fiap-arquitetura.c9ouqs40i2mh.sa-east-1.rds.amazonaws.com/postgres"

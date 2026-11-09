@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarqube-deploy
+  namespace: sonarqube
+  labels:
+    app: sonarqube-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sonarqube-app
+  template:
+    metadata:
+      labels:
+        app: sonarqube-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+                - arm64
+      containers:
+      - name: sonarqube
+        image: sonarqube:community
+        resources:
+            requests:
+              cpu: 500m
+              memory: 1024Mi
+            limits:
+              cpu: 2000m
+              memory: 2048Mi
+        env:
+          - name: "SONARQUBE_JDBC_USERNAME"
+            valueFrom:
+              secretKeyRef:
+                name: sonarqube-secret
+                key: user
+          - name: "SONARQUBE_JDBC_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: sonarqube-secret
+                key: pass
+          - name: "SONARQUBE_JDBC_URL"
+            valueFrom:
+              configMapKeyRef:
+                name: sonarqube-cm
+                key: rds-string
+        ports:
+        - name: http
+          containerPort: 9000
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        kubernetes.io/os: linux

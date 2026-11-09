@@ -1,0 +1,6 @@
+@dotnet_solid_HostAddress = http://localhost:5207
+
+GET {{dotnet_solid_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sonarqube-service
+  namespace: sonarqube
+  labels:
+    app: sonarqube-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: sonarqube-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9000

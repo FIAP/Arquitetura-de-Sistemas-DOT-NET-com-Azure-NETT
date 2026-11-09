@@ -1,0 +1,249 @@
+### Sistema de Gestão de Tarefas - Azure Functions .NET 8
+### Base URL para desenvolvimento local
+@baseUrl = http://localhost:7071/api
+
+### Variáveis globais - Atualize conforme necessário
+@taskId = 
+@taskId2 = 
+@taskId3 = 
+
+###############################################################################
+### HEALTH CHECKS - Sempre teste primeiro
+###############################################################################
+
+### 1. Health Check básico
+GET {{baseUrl}}/health
+Accept: application/json
+
+###
+
+### 2. Health Check detalhado (com estatísticas)
+GET {{baseUrl}}/health/detailed
+Accept: application/json
+
+###############################################################################
+### CRUD DE TAREFAS - Operações Básicas
+###############################################################################
+
+### 3. Listar todas as tarefas (deve estar vazio inicialmente)
+GET {{baseUrl}}/tasks
+Accept: application/json
+
+###
+
+### 4. Criar primeira tarefa - Completa
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Implementar autenticação JWT",
+  "description": "Desenvolver sistema de autenticação usando JWT para APIs",
+  "assignedTo": "developer@empresa.com",
+  "tags": ["segurança", "jwt", "alta-prioridade"]
+}
+
+### Copie o ID retornado e cole na variável @taskId acima
+
+###
+
+### 5. Criar segunda tarefa - Simples
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Revisar documentação da API",
+  "description": "Atualizar documentação com novos endpoints"
+}
+
+### Copie o ID retornado e cole na variável @taskId2 acima
+
+###
+
+### 6. Criar terceira tarefa - Para testes de workflow
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Configurar pipeline CI/CD",
+  "description": "Implementar deploy automático com GitHub Actions",
+  "assignedTo": "devops@empresa.com",
+  "tags": ["devops", "cicd", "automação"]
+}
+
+### Copie o ID retornado e cole na variável @taskId3 acima
+
+###
+
+### 7. Obter tarefa por ID específico
+GET {{baseUrl}}/tasks/{{taskId}}
+Accept: application/json
+
+###
+
+### 8. Listar todas as tarefas (agora deve ter 3 tarefas)
+GET {{baseUrl}}/tasks
+Accept: application/json
+
+###############################################################################
+### ATUALIZAÇÕES DE TAREFAS
+###############################################################################
+
+### 9. Atualizar apenas o status para InProgress
+PUT {{baseUrl}}/tasks/{{taskId}}
+Content-Type: application/json
+
+{
+  "status": "InProgress"
+}
+
+###
+
+### 10. Atualizar múltiplos campos
+PUT {{baseUrl}}/tasks/{{taskId2}}
+Content-Type: application/json
+
+{
+  "title": "Revisar e atualizar documentação da API",
+  "description": "Atualizar documentação com novos endpoints e exemplos de uso",
+  "status": "InProgress",
+  "assignedTo": "tech-writer@empresa.com",
+  "tags": ["documentação", "api", "exemplos"]
+}
+
+###
+
+### 11. Marcar tarefa como concluída
+PUT {{baseUrl}}/tasks/{{taskId3}}
+Content-Type: application/json
+
+{
+  "status": "Completed"
+}
+
+###
+
+### 12. Verificar se a data de conclusão foi definida
+GET {{baseUrl}}/tasks/{{taskId3}}
+Accept: application/json
+
+###############################################################################
+### FILTROS POR STATUS - Teste todos os status possíveis
+###############################################################################
+
+### 13. Buscar tarefas pendentes
+GET {{baseUrl}}/tasks/status/Pending
+Accept: application/json
+
+###
+
+### 14. Buscar tarefas em progresso
+GET {{baseUrl}}/tasks/status/InProgress
+Accept: application/json
+
+###
+
+### 15. Buscar tarefas concluídas
+GET {{baseUrl}}/tasks/status/Completed
+Accept: application/json
+
+###
+
+### 16. Buscar tarefas canceladas (deve estar vazio)
+GET {{baseUrl}}/tasks/status/Cancelled
+Accept: application/json
+
+###
+
+### 17. Cancelar uma tarefa para testar filtro
+PUT {{baseUrl}}/tasks/{{taskId2}}
+Content-Type: application/json
+
+{
+  "status": "Cancelled"
+}
+
+###
+
+### 18. Buscar tarefas canceladas novamente
+GET {{baseUrl}}/tasks/status/Cancelled
+Accept: application/json
+
+###############################################################################
+### TESTES DE VALIDAÇÃO - Casos que devem falhar
+###############################################################################
+
+### 19. Teste - Criar tarefa sem título (deve falhar)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "description": "Tarefa sem título para testar validação"
+}
+
+###
+
+### 20. Teste - Criar tarefa com título muito longo (deve falhar)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "description": "Teste de validação de título longo"
+}
+
+###
+
+### 21. Teste - Descrição muito longa (deve falhar)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Tarefa de teste",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+}
+
+###
+
+### 22. Teste - Muitas tags (deve falhar)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Tarefa com muitas tags",
+  "description": "Teste de validação de tags",
+  "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7", "tag8", "tag9", "tag10", "tag11"]
+}
+
+###
+
+### 23. Teste - Tag muito longa (deve falhar)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Tarefa com tag longa",
+  "description": "Teste de validação de tag",
+  "tags": ["tag-muito-longa-que-excede-o-limite-de-cinquenta-caracteres-definido-na-validacao"]
+}
+
+###
+
+### 24. Teste - Status inválido na atualização (deve falhar)
+PUT {{baseUrl}}/tasks/{{taskId}}
+Content-Type: application/json
+
+{
+  "status": "StatusInexistente"
+}
+
+###
+
+### 25. Teste - JSON inválido (deve falhar)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Tarefa com JSON inválido",
+  "description": "Teste,
+}
+

@@ -1,0 +1,61 @@
+version: "3.8"
+
+services:
+  # API .NET
+  pedidos-api:
+    build:
+      context: ./PedidosApi
+      dockerfile: Dockerfile
+    container_name: aula01-pedidos-api
+    restart: unless-stopped
+    ports:
+      - "5001:5000"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5000
+      ConnectionStrings__SqlServer: "Server=sqlserver,1433;Database=Pedidos;User Id=sa;Password=Password123!;TrustServerCertificate=true"
+      ConnectionStrings__MongoDB: "mongodb://admin:password123@mongodb:27017"
+      DatabaseSettings__MongoDbDatabaseName: "pedidos"
+    depends_on:
+      - mongodb
+      - sqlserver
+    networks:
+      - app-network
+
+  # MongoDB
+  mongodb:
+    image: mongo:7.0
+    container_name: aula01-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+  # SQL Server (para comparação)
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: aula01-sqlserver
+    restart: unless-stopped
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Password123!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - app-network
+
+volumes:
+  mongodb_data:
+  sqlserver_data:
+
+networks:
+  app-network:
+    driver: bridge

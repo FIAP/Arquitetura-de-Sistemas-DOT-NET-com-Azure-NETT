@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option csharp_namespace = "dotnet_grpc";
+
+package investment;
+
+service Investment {
+  rpc CreateInvestment (CreateInvestmentRequest) returns (InvestmentResponse);
+  rpc GetInvestments (GetInvestmentsRequest) returns (InvestmentsResponse);
+  rpc UpdateInvestment (UpdateInvestmentRequest) returns (InvestmentResponse);
+  rpc DeleteInvestment (DeleteInvestmentRequest) returns (DeleteInvestmentResponse);
+}
+
+message CreateInvestmentRequest {
+  string name = 1;
+  double amount = 2;
+}
+
+message GetInvestmentsRequest {}
+
+message UpdateInvestmentRequest {
+  int32 id = 1;
+  string name = 2;
+  double amount = 3;
+}
+
+message DeleteInvestmentRequest {
+  int32 id = 1;
+}
+
+message InvestmentResponse {
+  int32 id = 1;
+  string name = 2;
+  double amount = 3;
+  string date = 4;
+}
+
+message InvestmentsResponse {
+  repeated InvestmentResponse investments = 1;
+}
+
+message DeleteInvestmentResponse {
+  bool success = 1;
+}

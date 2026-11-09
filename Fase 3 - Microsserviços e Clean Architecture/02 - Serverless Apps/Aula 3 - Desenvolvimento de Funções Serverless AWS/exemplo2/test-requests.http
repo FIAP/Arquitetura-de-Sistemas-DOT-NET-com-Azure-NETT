@@ -1,0 +1,62 @@
+### Este arquivo contém exemplos de requisições para testar a API
+
+### Variáveis
+
+# AWS Real (substitua pela URL real após o deploy)
+@baseUrl = https://ug4ikpksrucglzn2fpqjseouze0xldlp.lambda-url.us-east-2.on.aws/
+
+# LocalStack (substitua API_ID pelo valor retornado pelo script deploy-localstack.sh)
+# @baseUrl = http://localhost:4566/_aws/execute-api/API_ID/dev
+
+# Para desenvolvimento local (se estiver rodando localmente)  
+# @baseUrl = http://localhost:3000
+
+### Health Check
+GET {{baseUrl}}/health
+Content-Type: application/json
+
+
+###
+
+### Obter dados de exemplo
+GET {{baseUrl}}/get-data
+Content-Type: application/json
+
+###
+
+### Processar pedido válido
+POST {{baseUrl}}/process-order
+Content-Type: application/json
+
+{
+  "productId": "PROD-001",
+  "quantity": 2,
+  "customerEmail": "cliente@exemplo.com"
+}
+
+###
+
+### Processar pedido com dados inválidos
+POST {{baseUrl}}/process-order
+Content-Type: application/json
+
+{
+  "productId": "",
+  "quantity": 0
+}
+
+###
+
+### Endpoint inexistente (para testar erro 403)
+GET {{baseUrl}}/endpoint-inexistente
+Content-Type: application/json
+
+###
+
+### Teste direto no LocalStack (exemplo com API_ID fixo)
+# Descomente e ajuste o API_ID conforme retornado pelo script
+
+# GET http://localhost:4566/_aws/execute-api/YOUR_API_ID/dev/health
+# Content-Type: application/json
+
+###

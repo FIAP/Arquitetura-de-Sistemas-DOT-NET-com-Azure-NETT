@@ -1,0 +1,36 @@
+service: hello-lambda-dotnet
+
+provider:
+  name: aws
+  runtime: dotnet8
+  region: us-east-1
+  environment:
+    ASPNETCORE_ENVIRONMENT: Development
+
+plugins:
+  - serverless-localstack
+
+custom:
+  localstack:
+    stages:
+      - local
+    host: http://localhost
+    edgePort: 4566
+    autostart: false
+    lambda:
+      mountCode: false
+
+package:
+  individually: true
+
+functions:
+  hello:
+    handler: HelloLambda::HelloLambda.Function::FunctionHandler
+    package:
+      artifact: ./artifacts/HelloLambda.zip
+    events:
+      - http:
+          path: hello
+          method: post
+
+

@@ -1,0 +1,188 @@
+{
+  "casos_de_teste": {
+    "1_cpf_valido": {
+      "descricao": "Cliente pessoa física com CPF válido",
+      "input": {
+        "name": "João Silva Santos",
+        "email": "joao.silva@empresa.com",
+        "document": "123.456.789-09",
+        "phone": "(11) 99999-9999"
+      },
+      "resultado_esperado": "SUCCESS"
+    },
+    
+    "2_cnpj_valido": {
+      "descricao": "Cliente pessoa jurídica com CNPJ válido",
+      "input": {
+        "name": "Empresa ABC Tecnologia Ltda",
+        "email": "contato@abctecnologia.com.br",
+        "document": "11.222.333/0001-81",
+        "phone": "(11) 3333-4444"
+      },
+      "resultado_esperado": "SUCCESS"
+    },
+    
+    "3_cpf_invalido": {
+      "descricao": "Tentativa com CPF inválido (dígitos verificadores incorretos)",
+      "input": {
+        "name": "Maria Oliveira",
+        "email": "maria.oliveira@email.com",
+        "document": "123.456.789-00",
+        "phone": "(21) 88888-7777"
+      },
+      "resultado_esperado": "VALIDATION_ERROR"
+    },
+    
+    "4_cnpj_invalido": {
+      "descricao": "Tentativa com CNPJ inválido",
+      "input": {
+        "name": "Empresa XYZ Ltda",
+        "email": "contato@empresaxyz.com",
+        "document": "11.222.333/0001-00",
+        "phone": "(11) 5555-6666"
+      },
+      "resultado_esperado": "VALIDATION_ERROR"
+    },
+    
+    "5_email_invalido": {
+      "descricao": "Tentativa com formato de email inválido",
+      "input": {
+        "name": "Pedro Santos",
+        "email": "email-sem-arroba-nem-dominio",
+        "document": "987.654.321-00",
+        "phone": "(11) 77777-8888"
+      },
+      "resultado_esperado": "VALIDATION_ERROR"
+    },
+    
+    "6_telefone_invalido": {
+      "descricao": "Tentativa com telefone em formato inválido",
+      "input": {
+        "name": "Ana Costa",
+        "email": "ana.costa@email.com",
+        "document": "456.789.123-45",
+        "phone": "123"
+      },
+      "resultado_esperado": "VALIDATION_ERROR"
+    },
+    
+    "7_nome_muito_curto": {
+      "descricao": "Tentativa com nome muito curto (menos de 2 caracteres)",
+      "input": {
+        "name": "A",
+        "email": "usuario@email.com",
+        "document": "111.222.333-44",
+        "phone": "(11) 99999-0000"
+      },
+      "resultado_esperado": "VALIDATION_ERROR"
+    },
+    
+    "8_documento_vazio": {
+      "descricao": "Tentativa sem informar documento",
+      "input": {
+        "name": "Roberto Silva",
+        "email": "roberto@email.com", 
+        "document": "",
+        "phone": "(11) 88888-9999"
+      },
+      "resultado_esperado": "VALIDATION_ERROR"
+    },
+    
+    "9_cpf_numeros_iguais": {
+      "descricao": "CPF com todos os dígitos iguais (inválido)",
+      "input": {
+        "name": "Carlos Mendes",
+        "email": "carlos@email.com",
+        "document": "111.111.111-11", 
+        "phone": "(11) 77777-6666"
+      },
+      "resultado_esperado": "VALIDATION_ERROR"
+    },
+    
+    "10_cliente_duplicado": {
+      "descricao": "Tentativa de cadastrar cliente que já existe (usar mesmo CPF do caso 1)",
+      "input": {
+        "name": "João Silva Santos",
+        "email": "joao.silva@empresa.com",
+        "document": "123.456.789-09",
+        "phone": "(11) 99999-9999"
+      },
+      "resultado_esperado": "CUSTOMER_EXISTS",
+      "observacao": "Executar após o caso 1 para simular duplicidade"
+    }
+  },
+  
+  "exemplos_de_output": {
+    "sucesso_completo": {
+      "sent": true,
+      "messageId": "abc123-def456-ghi789",
+      "createResult": {
+        "success": true,
+        "customerId": "550e8400-e29b-41d4-a716-446655440000",
+        "customer": {
+          "id": "550e8400-e29b-41d4-a716-446655440000",
+          "name": "João Silva Santos",
+          "email": "joao.silva@empresa.com",
+          "document": "12345678909",
+          "documentType": "CPF",
+          "phone": "(11) 99999-9999",
+          "createdAt": "2024-01-15T10:30:00.000Z",
+          "status": "ACTIVE"
+        }
+      },
+      "result": {
+        "status": "SUCCESS",
+        "message": "Cliente cadastrado com sucesso e email de boas-vindas enviado"
+      }
+    },
+    
+    "erro_validacao": {
+      "isValid": false,
+      "errors": [
+        "CPF inválido",
+        "Email deve ter um formato válido"
+      ],
+      "customerData": {
+        "name": "Nome do Cliente",
+        "email": "email-invalido",
+        "document": "123.456.789-00",
+        "phone": "(11) 99999-9999"
+      },
+      "result": {
+        "status": "VALIDATION_ERROR",
+        "message": "Os dados fornecidos são inválidos"
+      }
+    },
+    
+    "cliente_ja_existe": {
+      "exists": true,
+      "customerId": "550e8400-e29b-41d4-a716-446655440000",
+      "result": {
+        "status": "CUSTOMER_EXISTS",
+        "message": "Cliente já cadastrado no sistema"
+      }
+    }
+  },
+  
+  "cpfs_validos_para_teste": [
+    "123.456.789-09",
+    "987.654.321-00", 
+    "111.222.333-44",
+    "456.789.123-45",
+    "321.654.987-63"
+  ],
+  
+  "cnpjs_validos_para_teste": [
+    "11.222.333/0001-81",
+    "12.345.678/0001-90",
+    "98.765.432/0001-10"
+  ],
+  
+  "observacoes": [
+    "Os CPFs e CNPJs listados são válidos matematicamente mas fictícios",
+    "Para testar duplicidade, execute o mesmo caso duas vezes",
+    "O LocalStack simula o SNS mas não envia emails reais",
+    "Os IDs gerados são UUIDs aleatórios",
+    "A validação de CPF/CNPJ usa o algoritmo oficial brasileiro"
+  ]
+}

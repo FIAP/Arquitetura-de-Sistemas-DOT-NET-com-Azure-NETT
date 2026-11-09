@@ -1,0 +1,7 @@
+### Teste AWS Lambda URL - Apple
+POST https://oze2qehx5wwfgm36bkghaucrli0ezbfm.lambda-url.us-east-2.on.aws/
+Content-Type: application/json
+
+{
+  "symbol": "AAPL"
+}

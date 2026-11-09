@@ -1,0 +1,31 @@
+### Create a new investment
+POST http://localhost:5049/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { addInvestment(name: \"New Stock\", amount: 1500.50) { id name amount date } }"
+}
+
+### Read all investments
+POST http://localhost:5049/graphql
+Content-Type: application/json
+
+{
+  "query": "{ investments { id name amount date } }"
+}
+
+### Update an existing investment
+POST http://localhost:5049/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { updateInvestment(id: 1, name: \"Updated Stock\", amount: 2000.00) { id name amount date } }"
+}
+
+### Delete an investment
+POST http://localhost:5049/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { deleteInvestment(id: 1) }"
+}

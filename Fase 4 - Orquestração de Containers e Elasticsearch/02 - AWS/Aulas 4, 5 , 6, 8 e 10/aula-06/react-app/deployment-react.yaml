@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-fiap-deployment
+  namespace: react
+  labels:
+    app: react-fiap-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react-fiap-app
+  template:
+    metadata:
+      labels:
+        app: react-fiap-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+                - arm64
+      containers:
+      - name: react-fiap
+        image: 490498244836.dkr.ecr.sa-east-1.amazonaws.com/fiap-aws:1.2
+        resources:
+            requests:
+              cpu: 256m
+              memory: 512Mi
+            limits:
+              cpu: 512m
+              memory: 1024Mi
+        ports:
+        - name: http
+          containerPort: 3000
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        kubernetes.io/os: linux

@@ -1,0 +1,43 @@
+# Sistema/macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# IDEs/editores
+.vs/
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.swp
+.history/
+
+# .NET build
+bin/
+obj/
+TestResults/
+*.nupkg
+*.snupkg
+*.lock.json
+
+# Node/Serverless
+node_modules/
+.serverless/
+.aws-sam/
+
+# Artefatos locais
+artifacts/
+artifacts/publish/
+/tmp/
+*.log
+
+# Ambientes
+.env
+.env.*
+
+# Outros
+coverage/

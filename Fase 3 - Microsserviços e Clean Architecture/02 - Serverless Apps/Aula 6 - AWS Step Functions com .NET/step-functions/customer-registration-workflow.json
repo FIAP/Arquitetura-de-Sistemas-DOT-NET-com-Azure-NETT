@@ -1,0 +1,198 @@
+{
+  "Comment": "Fluxo de cadastro de cliente com validação, verificação de duplicidade, criação e envio de boas-vindas",
+  "StartAt": "ValidateCustomerData",
+  "States": {
+    "ValidateCustomerData": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:000000000000:function:ValidateDataFunction",
+      "Comment": "Valida os dados do cliente (CPF/CNPJ, email, telefone, etc.)",
+      "Next": "CheckValidationResult",
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "ValidationFailed",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    
+    "CheckValidationResult": {
+      "Type": "Choice",
+      "Comment": "Verifica se os dados são válidos",
+      "Choices": [
+        {
+          "Variable": "$.isValid",
+          "BooleanEquals": true,
+          "Next": "CheckCustomerExists"
+        }
+      ],
+      "Default": "ValidationFailed"
+    },
+    
+    "CheckCustomerExists": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:000000000000:function:CheckCustomerFunction",
+      "Comment": "Verifica se o cliente já existe no DynamoDB pelo CPF/CNPJ",
+      "Next": "CheckCustomerExistence",
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "DatabaseError",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    
+    "CheckCustomerExistence": {
+      "Type": "Choice",
+      "Comment": "Verifica se o cliente já existe",
+      "Choices": [
+        {
+          "Variable": "$.exists",
+          "BooleanEquals": true,
+          "Next": "CustomerAlreadyExists"
+        }
+      ],
+      "Default": "CreateCustomer"
+    },
+    
+    "CreateCustomer": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:000000000000:function:CreateCustomerFunction",
+      "Comment": "Cria um novo cliente no DynamoDB",
+      "Next": "CheckCustomerCreation",
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "CustomerCreationFailed",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    
+    "CheckCustomerCreation": {
+      "Type": "Choice",
+      "Comment": "Verifica se o cliente foi criado com sucesso",
+      "Choices": [
+        {
+          "Variable": "$.success",
+          "BooleanEquals": true,
+          "Next": "SendWelcomeEmail"
+        }
+      ],
+      "Default": "CustomerCreationFailed"
+    },
+    
+    "SendWelcomeEmail": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:000000000000:function:SendWelcomeEmailFunction",
+      "Comment": "Envia email de boas-vindas via SNS",
+      "Next": "RegistrationComplete",
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 2,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "EmailSendFailed",
+          "ResultPath": "$.emailError"
+        }
+      ]
+    },
+    
+    "RegistrationComplete": {
+      "Type": "Pass",
+      "Comment": "Cadastro do cliente concluído com sucesso",
+      "Result": {
+        "status": "SUCCESS",
+        "message": "Cliente cadastrado com sucesso e email de boas-vindas enviado"
+      },
+      "ResultPath": "$.result",
+      "End": true
+    },
+    
+    "ValidationFailed": {
+      "Type": "Pass",
+      "Comment": "Dados de entrada inválidos",
+      "Result": {
+        "status": "VALIDATION_ERROR",
+        "message": "Os dados fornecidos são inválidos"
+      },
+      "ResultPath": "$.result",
+      "End": true
+    },
+    
+    "CustomerAlreadyExists": {
+      "Type": "Pass",
+      "Comment": "Cliente já existe no sistema",
+      "Result": {
+        "status": "CUSTOMER_EXISTS",
+        "message": "Cliente já cadastrado no sistema"
+      },
+      "ResultPath": "$.result",
+      "End": true
+    },
+    
+    "DatabaseError": {
+      "Type": "Pass",
+      "Comment": "Erro ao acessar o banco de dados",
+      "Result": {
+        "status": "DATABASE_ERROR",
+        "message": "Erro ao acessar o banco de dados"
+      },
+      "ResultPath": "$.result",
+      "End": true
+    },
+    
+    "CustomerCreationFailed": {
+      "Type": "Pass",
+      "Comment": "Falha na criação do cliente",
+      "Result": {
+        "status": "CREATION_ERROR",
+        "message": "Erro ao criar o cliente"
+      },
+      "ResultPath": "$.result",
+      "End": true
+    },
+    
+    "EmailSendFailed": {
+      "Type": "Pass",
+      "Comment": "Falha no envio do email (mas cliente foi criado)",
+      "Result": {
+        "status": "PARTIAL_SUCCESS",
+        "message": "Cliente criado com sucesso, mas houve erro no envio do email de boas-vindas"
+      },
+      "ResultPath": "$.result",
+      "End": true
+    }
+  }
+}

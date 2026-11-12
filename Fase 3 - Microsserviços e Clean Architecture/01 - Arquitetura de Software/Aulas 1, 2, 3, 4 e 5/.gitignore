@@ -1,0 +1,65 @@
+# Arquivos de configuração do IDE
+/.vs/
+/.vscode/
+
+# Pastas de build e binários
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Ll]ogs/
+
+# Pacotes NuGet
+packages/
+*.nupkg
+!*.nuspec
+
+# Arquivos de projeto e solução
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Arquivos de armazenamento local temporário
+*.[Cc]ache
+*.[Tt]mp
+*.[Ll]og
+*.[Bb]ak
+*.[Tt]mp_proj
+
+# Arquivos gerados automaticamente durante a build
+Generated_Code/
+
+# Arquivos de banco de dados
+*.mdf
+*.ldf
+*.ndf
+
+# Arquivos de configuração que podem conter informações sensíveis
+*.config
+*.json
+
+# Pastas específicas do Rider
+.idea/
+
+# Arquivos de backup de outros editores
+*~
+*.swp
+*.swa
+*.bak
+*.tmp
+*.temp
+
+# Dumps de memória
+*.dmp
+*.hdmp
+*.mdmp
+
+# Arquivos de log do Windows
+*.etl
+*.evtx
+
+# Outros arquivos e diretórios que são gerados automaticamente
+project.lock.json
+project.fragment.lock.json
+artifact.properties
+

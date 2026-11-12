@@ -42,6 +42,7 @@ Este repositório contém os materiais complementares divididos por fases, categ
 
 ## [Fase 3 - Microsserviços e Clean Architecture](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture)
 - [01 - Arquitetura de Software](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/01%20-%20Arquitetura%20de%20Software)
+  - [Aulas 1, 2, 3, 4 e 5](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/01%20-%20Arquitetura%20de%20Software/Aulas%201%2C%202%2C%203%2C%204%20e%205)
 - [02 - Serverless Apps](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/02%20-%20Serverless%20Apps)
   - [Aula 2 - Desenvolvimento de Funções Serverless](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/02%20-%20Serverless%20Apps/Aula%202%20-%20Desenvolvimento%20de%20Fun%C3%A7%C3%B5es%20Serverless)
   - [Aula 3 - Desenvolvimento de Funções Serverless AWS](./Fase%203%20-%20Microsservi%C3%A7os%20e%20Clean%20Architecture/02%20-%20Serverless%20Apps/Aula%203%20-%20Desenvolvimento%20de%20Fun%C3%A7%C3%B5es%20Serverless%20AWS)

@@ -26,6 +26,8 @@ Este repositório contém os materiais complementares divididos por fases, categ
 - [04 - Princípios básicos de qualidade de Software](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/04%20-%20Princ%C3%ADpios%20b%C3%A1sicos%20de%20qualidade%20de%20Software)
 - [05 - Qualidade de Software](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/05%20-%20Qualidade%20de%20Software)
   - [Aulas 1, 2, 3, 4, 5 e 6](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/05%20-%20Qualidade%20de%20Software/Aulas%201%2C%202%2C%203%2C%204%2C%205%20e%206)
+- [06 - Domínio, requisitos e decisões de arquitetura](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/06%20-%20Dom%C3%ADnio%2C%20requisitos%20e%20decis%C3%B5es%20de%20arquitetura)
+- [07 - Identidade, Autenticação e Autorização em ASP.NET Core](./Fase%201%20-%20Arquitetura%20e%20qualidade%20de%20software/07%20-%20Identidade%2C%20Autentica%C3%A7%C3%A3o%20e%20Autoriza%C3%A7%C3%A3o%20em%20ASP.NET%20Core)
 
 ## [Fase 2 - Microsserviços e orquestração de containers](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers)
 - [01 - Docker](./Fase%202%20-%20Microsservi%C3%A7os%20e%20orquestra%C3%A7%C3%A3o%20de%20containers/01%20-%20Docker)
@@ -80,5 +82,6 @@ Este repositório contém os materiais complementares divididos por fases, categ
 - [03 - Privacidade de Dados e LGPD](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/03%20-%20Privacidade%20de%20Dados%20e%20LGPD)
 - [04 - Blazor e Razor](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/04%20-%20Blazor%20e%20Razor)
 - [05 - Inteligência Artificial em .NET](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/05%20-%20Intelig%C3%AAncia%20Artificial%20em%20.NET)
+- [06 - Busca, RAG, Qualidade e Segurança em Soluções de IA](./Fase%205%20-%20Agilidade%2C%20seguran%C3%A7a%20e%20IA/06%20-%20Busca%2C%20RAG%2C%20Qualidade%20e%20Seguran%C3%A7a%20em%20Solu%C3%A7%C3%B5es%20de%20IA)
 
 <!-- INDEX:END -->

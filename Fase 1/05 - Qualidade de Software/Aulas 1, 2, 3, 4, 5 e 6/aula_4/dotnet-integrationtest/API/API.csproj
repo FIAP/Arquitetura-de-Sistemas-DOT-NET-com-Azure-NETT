@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="System.ServiceModel.Syndication" Version="7.0.0" />
-    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="Npgsql" Version="7.0.7" />
     <PackageReference Include="Dapper" Version="2.0.138" />
     <PackageReference Include="CodeHollow.FeedReader" Version="1.2.6" />
   </ItemGroup>

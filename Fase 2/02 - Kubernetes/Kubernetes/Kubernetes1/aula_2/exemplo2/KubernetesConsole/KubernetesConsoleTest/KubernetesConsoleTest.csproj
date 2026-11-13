@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="KubernetesClient" Version="10.1.4" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
 </Project>

@@ -30,7 +30,10 @@ builder.Services.AddSingleton<CropService>();
 #endregion
 
 #region [AutoMapper]
-builder.Services.AddAutoMapper(typeof(EntityToViewModelMapping), typeof(ViewModelToEntityMapping));
+// A partir da v15 o AutoMapper pede uma chave de licença (gratuita para uso educacional).
+// Defina "AutoMapper:LicenseKey" no appsettings ou a variável de ambiente AutoMapper__LicenseKey.
+builder.Services.AddAutoMapper(cfg => cfg.LicenseKey = builder.Configuration["AutoMapper:LicenseKey"],
+    typeof(EntityToViewModelMapping), typeof(ViewModelToEntityMapping));
 #endregion
 
 

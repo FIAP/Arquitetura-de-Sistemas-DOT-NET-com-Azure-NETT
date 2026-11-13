@@ -1,15 +1,15 @@
 
 const db = require('./config/db');
-const request = require('request');
+const axios = require('axios');
 const cheerio = require('cheerio');
 
 const helper = require('./infra/helper');
 const characterRepository = require('./repository/characterRepository');
 
-request('https://www.hbo.com/game-of-thrones/cast-and-crew', function (error, response, html) {
+axios.get('https://www.hbo.com/game-of-thrones/cast-and-crew').then((response) => {
 
-    if (!error && response.statusCode == 200) {
-        let $ = cheerio.load(html);
+    if (response.status == 200) {
+        let $ = cheerio.load(response.data);
 
         $('div.row div.col.col-custom img').each((index, element) => {
 
@@ -51,4 +51,4 @@ request('https://www.hbo.com/game-of-thrones/cast-and-crew', function (error, re
         //     characterRepository.create(characters);
         // });
     }
-});
+}).catch((error) => console.error(error));

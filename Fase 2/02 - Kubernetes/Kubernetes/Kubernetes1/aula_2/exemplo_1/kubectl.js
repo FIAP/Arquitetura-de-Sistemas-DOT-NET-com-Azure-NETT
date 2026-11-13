@@ -1,11 +1,12 @@
-const k8s = require('@kubernetes/client-node');
+import * as k8s from '@kubernetes/client-node';
+
 const kc = new k8s.KubeConfig();
 kc.loadFromDefault();
 
 const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
 
-k8sApi.readNamespacedPod('apicontador-node', 'default').then((res) => {
-    console.log(res.body);
+k8sApi.readNamespacedPod({ name: 'apicontador-node', namespace: 'default' }).then((pod) => {
+    console.log(pod);
 }).catch((err) => {
     console.log(err);
 });

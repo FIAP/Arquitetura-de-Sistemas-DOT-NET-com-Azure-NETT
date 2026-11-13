@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:22
 
 ENV MONGO_URL=""
 ENV REDIS_URL=""

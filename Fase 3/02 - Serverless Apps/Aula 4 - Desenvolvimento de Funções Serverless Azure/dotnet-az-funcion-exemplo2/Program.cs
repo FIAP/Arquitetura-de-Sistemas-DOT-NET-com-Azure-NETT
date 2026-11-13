@@ -17,7 +17,7 @@ var host = new HostBuilder()
     {
         builder.UseMiddleware<ExceptionHandlingMiddleware>();
     })
-    .ConfigureServices(services =>
+    .ConfigureServices((context, services) =>
     {
         services.AddApplicationInsightsTelemetryWorkerService();
         services.ConfigureFunctionsApplicationInsights();
@@ -41,7 +41,10 @@ var host = new HostBuilder()
         services.AddScoped<ITaskService, TaskService>();
 
         // AutoMapper
-        services.AddAutoMapper(typeof(TaskMappingProfile));
+        // A partir da v15 o AutoMapper pede uma chave de licença (gratuita para uso educacional).
+        // Defina "AutoMapper:LicenseKey" no local.settings.json ou a variável de ambiente AutoMapper__LicenseKey.
+        services.AddAutoMapper(cfg => cfg.LicenseKey = context.Configuration["AutoMapper:LicenseKey"],
+            typeof(TaskMappingProfile));
 
         // FluentValidation
         services.AddValidatorsFromAssemblyContaining<CreateTaskDtoValidator>();

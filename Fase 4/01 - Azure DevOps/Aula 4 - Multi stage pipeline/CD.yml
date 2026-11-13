@@ -28,7 +28,7 @@ stages:
         inputs:
           command: 'install'
           
-      - script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'
+      - script: './node_modules/.bin/sass --no-source-map $(wwwrootDir):$(wwwrootDir)'
 
       - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(build.BuildNumber)" > buildinfo.txt'
         workingDirectory: $(wwwrootDir)

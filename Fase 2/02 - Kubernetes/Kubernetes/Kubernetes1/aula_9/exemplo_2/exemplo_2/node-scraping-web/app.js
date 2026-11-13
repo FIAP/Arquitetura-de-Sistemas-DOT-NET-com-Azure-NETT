@@ -1,18 +1,14 @@
-var request = require("request");
-var uuid = require('uuid');
+var axios = require("axios");
 
 var helper = require("./infra/helper");
 
 let url = 'https://dog.ceo/api/breeds/image/random';
 
 
-request.get(url, (error, response, body) => {
-    if (error) {
-        return console.dir(error);
-    }
-    let urlImage = JSON.parse(body).message;
+axios.get(url).then((response) => {
+    let urlImage = response.data.message;
     console.log(urlImage);
     console.log(urlImage.substring(urlImage.lastIndexOf('/')+1));
-   // helper.downloadImageToUrl(JSON.parse(body).message, "./temp/" + uuidv1())
-});
+   // helper.downloadImageToUrl(response.data.message, "./temp/" + crypto.randomUUID())
+}).catch((error) => console.dir(error));
 

@@ -103,6 +103,19 @@ Edite o arquivo `local.settings.json` e adicione sua connection string:
 }
 ```
 
+### 5. Configure a licença do AutoMapper (opcional)
+O projeto usa o AutoMapper 15, que passou a exigir uma chave de licença. Existe uma licença
+Community gratuita (veja as condições em https://automapper.io). Sem a chave o projeto funciona
+normalmente, mas o AutoMapper registra um aviso no log. Para informar a chave, adicione ao
+`local.settings.json`:
+```json
+{
+  "Values": {
+    "AutoMapper__LicenseKey": "sua-chave-aqui"
+  }
+}
+```
+
 ## Executando o Projeto
 
 ### Desenvolvimento Local

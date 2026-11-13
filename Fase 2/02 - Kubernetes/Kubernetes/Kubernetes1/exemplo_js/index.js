@@ -1,5 +1,4 @@
-const k8s = require('@kubernetes/client-node');
-const fs = require('fs');
+import * as k8s from '@kubernetes/client-node';
 
 // Carregando a configuração do Kubernetes
 const kc = new k8s.KubeConfig();
@@ -24,9 +23,9 @@ spec:
 const podManifestJson = JSON.parse(JSON.stringify(k8s.loadYaml(podManifest)));
 
 // Criando o objeto do pod
-k8sApi.createNamespacedPod('default', podManifestJson)
+k8sApi.createNamespacedPod({ namespace: 'default', body: podManifestJson })
  .then((response) => {
-   console.log('Pod criado com sucesso:', response.body.metadata.name);
+   console.log('Pod criado com sucesso:', response.metadata.name);
  })
  .catch((error) => {
    console.error('Erro ao criar o pod:', error);

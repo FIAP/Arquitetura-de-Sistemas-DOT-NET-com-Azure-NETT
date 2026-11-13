@@ -7,12 +7,15 @@ const redisUrl = process.env.REDIS_URL;
 
 var redis = require('redis');
 const client = redis.createClient({
-    host: redisUrl, 
-    port: 6379
-  });
-exports.get = (req, res) => {
-
-    client.get('allpersons', function (err, reply) {
+    socket: {
+        host: redisUrl,
+        port: 6379
+    }
+});
+client.connect().catch(console.error);
+exports.get = async (req, res) => {
+    try {
+        const reply = await client.get('allpersons');
 
         if (reply) {
             console.log('redis');
@@ -20,17 +23,14 @@ exports.get = (req, res) => {
         } else {
             console.log('db');
 
-            PersonRepository.getAll()
-                .then((person) => {
-                    client.set('allpersons', JSON.stringify(person));
-                    client.expire('allpersons', 300);
-                    res.status(200).send(person);
-                }).catch(err => res.status(500).send(err))
+            const person = await PersonRepository.getAll();
+            await client.set('allpersons', JSON.stringify(person));
+            await client.expire('allpersons', 300);
+            res.status(200).send(person);
         }
-    });
-
-    
-
+    } catch (err) {
+        res.status(500).send(err);
+    }
 };
 
 exports.getById = (req, res) => {

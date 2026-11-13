@@ -28,7 +28,7 @@ module.exports = new class PersonRepository {
     }
 
     delete(id) {
-        return Person.findByIdAndRemove(id);
+        return Person.findByIdAndDelete(id);
     }
 }
 

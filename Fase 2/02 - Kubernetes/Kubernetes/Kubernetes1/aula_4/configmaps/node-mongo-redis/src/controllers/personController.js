@@ -4,10 +4,11 @@ const PersonRepository = require('../repositories/personRepository');
 
 var redis = require('redis');
 var client = redis.createClient();
+client.connect().catch(console.error);
 
-exports.get = (req, res) => {
-
-    client.get('allpersons', function (err, reply) {
+exports.get = async (req, res) => {
+    try {
+        const reply = await client.get('allpersons');
 
         if (reply) {
             console.log('redis');
@@ -15,15 +16,14 @@ exports.get = (req, res) => {
         } else {
             console.log('db');
 
-            PersonRepository.getAll()
-                .then((person) => {
-                    client.set('allpersons', JSON.stringify(person));
-                    client.expire('allpersons', 20);
-                    res.status(200).send(person);
-                }).catch(err => res.status(500).send(err))
+            const person = await PersonRepository.getAll();
+            await client.set('allpersons', JSON.stringify(person));
+            await client.expire('allpersons', 20);
+            res.status(200).send(person);
         }
-    });
-
+    } catch (err) {
+        res.status(500).send(err);
+    }
 };
 
 exports.getById = (req, res) => {

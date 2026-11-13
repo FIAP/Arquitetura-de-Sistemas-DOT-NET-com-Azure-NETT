@@ -13,6 +13,7 @@ export class TsIacStack extends Construct {
     blueprints.EksBlueprint.builder()
     .account(account)
     .region(region)
+    .version("auto")
     .build(scope,`${id}-ClusterEKSFiap`)
 
   }

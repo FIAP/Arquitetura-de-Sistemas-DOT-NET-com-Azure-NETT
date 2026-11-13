@@ -1,5 +1,4 @@
-﻿using IdentityModel.OidcClient;
-using k8s;
+﻿using k8s;
 using k8s.Models;
 using System;
 using System.IO;

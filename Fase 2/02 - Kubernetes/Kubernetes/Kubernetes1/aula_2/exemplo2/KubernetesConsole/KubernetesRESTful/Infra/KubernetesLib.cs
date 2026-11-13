@@ -76,7 +76,7 @@ namespace KubernetesRESTful.Infra
             var client = new Kubernetes(config);
 
 
-            var events = client.ListNamespacedEvent(ns).Items;
+            var events = client.CoreV1.ListNamespacedEvent(ns).Items;
 
 
             foreach (var ev in events)

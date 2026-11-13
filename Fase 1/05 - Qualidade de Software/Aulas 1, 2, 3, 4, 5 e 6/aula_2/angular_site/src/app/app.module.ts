@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,19 +8,11 @@ import { HeaderComponent } from './pages/components/header/header.component';
 import { HomeModule } from './pages/home/home.module';
 import { HomeService } from './pages/home/services/home.service';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent
-  ],
-  imports: [
-    BrowserModule,
-    HomeModule,
-    AppRoutingModule,
-    HttpClientModule
-
-  ],
-  providers: [HomeService],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        HomeModule,
+        AppRoutingModule], providers: [HomeService, provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule { }

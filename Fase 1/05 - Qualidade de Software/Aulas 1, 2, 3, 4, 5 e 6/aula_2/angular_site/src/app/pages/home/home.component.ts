@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Result } from 'src/app/shared/result';
 import { GalleryService } from './gallery/services/gallery.service';
 import { Gallery } from './models/gallery';
@@ -8,9 +8,11 @@ import { HomeService } from './services/home.service';
 import { VideoService } from './video/services/video.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HomeComponent implements OnInit {
 

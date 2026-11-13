@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
 
+> Atualizado para o Angular 22 (requer Node.js 22.22.3+ ou 24.15+). O build de produção agora fica em `dist/angular-site/browser/`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

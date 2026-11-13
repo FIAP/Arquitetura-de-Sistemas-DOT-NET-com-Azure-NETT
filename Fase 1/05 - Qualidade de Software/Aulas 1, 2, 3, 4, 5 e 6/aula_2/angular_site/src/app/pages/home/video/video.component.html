@@ -16,7 +16,7 @@
                             <!-- Notice we turned off controls? We're supplying our own, so we hide the native ones. -->
                             <vm-player>
                                 <vm-video cross-origin="true" poster="{{video?.thumbnail}}">
-                                    <source data-src="{{videoUrl}}" type="video/mp4" />
+                                    <source [attr.data-src]="videoUrl" type="video/mp4" />
                                     <track default kind="subtitles" src="https://media.vimejs.com/subs/english.vtt"
                                         srclang="en" label="English" />
                                 </vm-video>

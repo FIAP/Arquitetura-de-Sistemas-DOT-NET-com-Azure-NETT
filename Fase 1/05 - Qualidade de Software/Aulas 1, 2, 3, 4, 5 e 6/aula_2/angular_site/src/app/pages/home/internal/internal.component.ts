@@ -1,12 +1,14 @@
 import { ActivatedRoute } from '@angular/router';
-import { OnInit, Component } from '@angular/core';
+import { OnInit, Component, ChangeDetectionStrategy } from '@angular/core';
 import { InternalService } from './services/internal.service';
 import { News } from '../models/news';
 
 @Component({
-  selector: 'app-internal',
-  templateUrl: './internal.component.html',
-  styleUrls: ['./internal.component.css']
+    selector: 'app-internal',
+    templateUrl: './internal.component.html',
+    styleUrls: ['./internal.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InternalComponent implements OnInit {
 

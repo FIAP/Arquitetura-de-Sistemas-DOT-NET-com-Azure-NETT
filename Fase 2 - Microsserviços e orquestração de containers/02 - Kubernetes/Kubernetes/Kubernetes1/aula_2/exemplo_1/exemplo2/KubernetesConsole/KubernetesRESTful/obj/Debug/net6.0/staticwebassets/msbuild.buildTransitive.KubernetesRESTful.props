@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/KubernetesRESTful.props" />
-</Project>

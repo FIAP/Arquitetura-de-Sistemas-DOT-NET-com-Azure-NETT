@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApp.DynamoDemo", "ClientApp.DynamoDemo\ClientApp.DynamoDemo.csproj", "{8FCF9583-5B53-40BE-AEE6-E315A6BDF27F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FCF9583-5B53-40BE-AEE6-E315A6BDF27F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCF9583-5B53-40BE-AEE6-E315A6BDF27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FCF9583-5B53-40BE-AEE6-E315A6BDF27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FCF9583-5B53-40BE-AEE6-E315A6BDF27F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A7A931E-78A0-4693-AADC-147741D357A6}
+	EndGlobalSection
+EndGlobal

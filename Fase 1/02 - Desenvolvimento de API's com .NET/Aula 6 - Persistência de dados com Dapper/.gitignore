@@ -33,9 +33,7 @@ TestResults/
 packages/
 
 # Arquivos de configuração do Visual Studio
-*.sln
 *.suo
-*.csproj
 *.user
 *.userosscache
 *.vspscc

@@ -1,0 +1,29 @@
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "s3-processor-stack"
+s3_bucket = ""
+s3_prefix = "s3-processor"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = [
+    "BucketName=meu-bucket-upload",
+    "Environment=local"
+]
+
+[default.build]
+[default.build.parameters]
+use_container = true
+
+[localstack]
+[localstack.deploy]
+[localstack.deploy.parameters]
+stack_name = "s3-processor-stack-local"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+s3_endpoint_url = "http://localhost:4566"
+endpoint_url = "http://localhost:4566"
+parameter_overrides = [
+    "BucketName=meu-bucket-upload",
+    "Environment=local"
+]
